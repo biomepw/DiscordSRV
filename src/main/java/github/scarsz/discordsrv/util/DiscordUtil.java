@@ -607,10 +607,7 @@ public class DiscordUtil {
             if (DiscordSRV.config().getBoolean("Experiment_Automatic_Color_Translations")) {
                 DiscordSRV.debug("Looking up the color for role " + role + " (" + hex + ") with automatic translation");
 
-                ChatColor determinedColor = minecraftColors.entrySet().stream()
-                        .min(Comparator.comparingInt(entry -> colorDistance(color, entry.getKey())))
-                        .map(Map.Entry::getValue)
-                        .orElseThrow(() -> new RuntimeException("This should not be possible:tm:"));
+                net.md_5.bungee.api.ChatColor determinedColor = net.md_5.bungee.api.ChatColor.of(color);
 
                 DiscordSRV.debug("Color for " + role + " determined to: " + determinedColor.name());
                 translatedColor = determinedColor.toString();

@@ -2,5 +2,5 @@
 commands = ["mvn clean package"]
 
 [archive]
-files = ["target/DiscordSRV-Build-1.20.0-2beb615.jar"]
+files = ["target/DiscordSRV-Build-1.20.0-"]
 append_buildnumber = true
